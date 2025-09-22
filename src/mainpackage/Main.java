@@ -1,4 +1,5 @@
 package mainpackage;
+
 import patientpackage.Patient;
 import java.util.Scanner;
 
@@ -61,7 +62,17 @@ public class Main {
             System.out.print("Діагноз: ");
             String diagnos = scanner.nextLine();
 
-            patients[i] = new Patient(id, firstName, secondName, lastName, address, number, numMedCard, diagnos);
+            Patient patient = new Patient(0, "", "", "", "", "", 0, "");
+            patient.setId(id);
+            patient.setFirstName(firstName);
+            patient.setSecondName(secondName);
+            patient.setLastName(lastName);
+            patient.setAddress(address);
+            patient.setNumber(number);
+            patient.setNumMedCard(numMedCard);
+            patient.setDiagnos(diagnos);
+
+            patients[i] = patient;
         }
 
         System.out.print("\nВведіть діагноз для пошуку: ");
@@ -112,16 +123,17 @@ public class Main {
     public static void printByDiagnos(String diag, Patient[] patients) {
         System.out.println("\nПацієнти з діагнозом '" + diag + "':");
         for (Patient p : patients) {
-            if (p.TrueDisgnos(diag)) {
+            if (p.getDiagnos().equalsIgnoreCase(diag)) {
                 System.out.println(p);
             }
         }
     }
 
+    // --- Вивід по інтервалу медкартки ---
     public static void printByInterval(int a, int b, Patient[] patients) {
         System.out.println("\nПацієнти з номером медкартки у діапазоні [" + a + ", " + b + "]:");
         for (Patient p : patients) {
-            if (p.interval(a, b)) {
+            if (p.getNumMedCard() >= a && p.getNumMedCard() <= b) {
                 System.out.println(p);
             }
         }
@@ -131,12 +143,11 @@ public class Main {
         int count = 0;
         System.out.println("\nПацієнти, телефон яких починається з '" + digit + "':");
         for (Patient p : patients) {
-            if (p.firstNumPhone(digit)) {
+            if (p.getNumber().charAt(0) == digit) {
                 System.out.println(p);
                 count++;
             }
         }
         System.out.println("Загальна кількість: " + count);
     }
-
 }
