@@ -20,7 +20,9 @@ public class Patient {
         this.diagnos = diagnos;
     }
 
-    public int getId() { return id; }
+    public int getId() {
+        return id;
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -42,7 +44,6 @@ public class Patient {
     public String getDiagnos() {
         return diagnos;
     }
-
 
     public void setId(int id) {
         this.id = id;
@@ -67,15 +68,12 @@ public class Patient {
     public void setDiagnos(String diagnos) {
         this.diagnos = diagnos;
     }
-
     public boolean firstNumPhone(char sumbol) {
         return number.charAt(0) == sumbol;
     }
-
     public boolean interval(int a, int b) {
         return numMedCard >= a && numMedCard <= b;
     }
-
     public boolean TrueDisgnos(String diag) {
         return diagnos.equalsIgnoreCase(diag);
     }
