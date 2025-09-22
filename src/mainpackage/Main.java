@@ -129,7 +129,6 @@ public class Main {
         }
     }
 
-    // --- Вивід по інтервалу медкартки ---
     public static void printByInterval(int a, int b, Patient[] patients) {
         System.out.println("\nПацієнти з номером медкартки у діапазоні [" + a + ", " + b + "]:");
         for (Patient p : patients) {

@@ -68,15 +68,6 @@ public class Patient {
     public void setDiagnos(String diagnos) {
         this.diagnos = diagnos;
     }
-    public boolean firstNumPhone(char sumbol) {
-        return number.charAt(0) == sumbol;
-    }
-    public boolean interval(int a, int b) {
-        return numMedCard >= a && numMedCard <= b;
-    }
-    public boolean TrueDisgnos(String diag) {
-        return diagnos.equalsIgnoreCase(diag);
-    }
 
     public String toString() {
         return "Patient{" +
