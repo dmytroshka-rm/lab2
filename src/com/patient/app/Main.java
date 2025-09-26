@@ -1,6 +1,7 @@
-package mainpackage;
+package com.patient.app;
 
-import patientpackage.Patient;
+import com.patient.model.Patient;
+
 import java.util.Scanner;
 
 public class Main {
