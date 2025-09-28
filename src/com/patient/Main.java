@@ -1,4 +1,4 @@
-package com.patient.app;
+package com.patient;
 
 import com.patient.model.Patient;
 
