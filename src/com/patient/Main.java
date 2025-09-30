@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Скільки пацієнтів ви хочете ввести?");
         int n = scanner.nextInt();
         scanner.nextLine();
@@ -63,16 +62,7 @@ public class Main {
             System.out.print("Діагноз: ");
             String diagnos = scanner.nextLine();
 
-            Patient patient = new Patient(0, "", "", "", "", "", 0, "");
-            patient.setId(id);
-            patient.setFirstName(firstName);
-            patient.setSecondName(secondName);
-            patient.setLastName(lastName);
-            patient.setAddress(address);
-            patient.setNumber(number);
-            patient.setNumMedCard(numMedCard);
-            patient.setDiagnos(diagnos);
-
+            Patient patient = new Patient(id,firstName,secondName,lastName,address,number,numMedCard,diagnos);
             patients[i] = patient;
         }
 

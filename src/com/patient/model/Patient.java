@@ -69,6 +69,7 @@ public class Patient {
         this.diagnos = diagnos;
     }
 
+
     public String toString() {
         return "Patient{" +
                 "id=" + id +
